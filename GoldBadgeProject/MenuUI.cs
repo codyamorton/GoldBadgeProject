@@ -1,4 +1,5 @@
 ﻿using MenuList;
+using MenuRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace MenuConsole
 {
     class MenuUI
     {
-        private Menu _menuItems = new Menu();
+        private MenuRepo _menuItems = new MenuRepo();
 
         // Method that starts/runs application
         public void Run()
@@ -112,7 +113,7 @@ namespace MenuConsole
         private void DisplayAllMeals()
         {
             Console.Clear();
-            List<Menu> listOfMeals = _menuItems.ViewAllMeals();
+            List<Menu> listOfMeals = _menuItems.GetMenuItemList();
             foreach(Menu meals in listOfMeals)
             {
                 Console.WriteLine($"mealName: { meals.MealName}\n" +

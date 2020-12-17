@@ -17,8 +17,7 @@ namespace MenuTest
         public void Arrange()
         {
             _repo = new MenuRepo();
-            _menu = new MenuUI("Burger", "Basic beef hamburger", 1, 2.99);
-
+            _menu = new Menu ("burger", "Basic beef hamburger", 1, IngredientList.Beef, 2.99);
             _repo.AddMenuItemToList(_menu);
         }
         
@@ -49,7 +48,7 @@ namespace MenuTest
         {
             //Arrange
             //TestInitialize
-            Menu newMeal = new Menu("Burger", "Basic beef hamburger", 1, 5.99);
+            Menu newMeal = new Menu("Burger", "Basic beef hamburger", 1, IngredientList.Beef, 5.99);
             // Act
             bool updateResult = _repo.UpdateMeal("Burger", newMeal);
 
@@ -62,7 +61,7 @@ namespace MenuTest
         
         public void UpdateMeal_ShouldMatchBool(string originalMeal, bool shouldUpdate)
         {
-            Menu newMeal = new Menu("Burger", "Basic beef hamburger", 1, 5.99);
+            Menu newMeal = new Menu("Burger", "Basic beef hamburger", 1, IngredientList.Beef, 5.99);
             // Act
             bool updateResult = _repo.UpdateMeal("Burger", newMeal);
 
@@ -74,11 +73,12 @@ namespace MenuTest
         public void DeleteMeals()
         {
             //Arrange
-
+            string menuName = "burger";
             // Act
-            bool deleteResult = _repo.RemoveItemFromList(_repo.Meal);
+            bool deleteResult = _repo.RemoveItemFromList(menuName);
 
             // Assert
+            Assert.IsTrue(deleteResult);
 
         }
     }
