@@ -1,12 +1,14 @@
-﻿using System;
+﻿using CompanyOutingMain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CompanyOuting_Test
+namespace OutingTest_Repo
 {
-    class Class1
+    public class OutingTest_Repo
     {
+        
     }
 }

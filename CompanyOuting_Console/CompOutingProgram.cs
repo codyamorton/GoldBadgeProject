@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace CompanyOuting_Console
 {
-    class Program
+    class CompOutingProgram
     {
         static void Main(string[] args)
         {
+            CompOutingUI program = new CompOutingUI();
+            program.Run();
+            
+
+            
         }
     }
 }
